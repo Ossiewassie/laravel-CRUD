@@ -29,3 +29,15 @@ Route::prefix('ratings')->name('ratings.')->group(function () {
     Route::post('/', 'RatingsController@store')->name('store');
     Route::delete('/{rating}', 'RatingsController@delete')->name('delete');
 });
+
+Route::prefix('api/')->name('api.')->group(function () {
+    Route::prefix('games')->name('api.games')->group(function () {
+
+        Route::get('/', 'apiGamesController@index')->name('index');
+    Route::get('/{rating}/edit', 'RatingsController@edit')->name('edit');
+    Route::patch('/{rating}', 'RatingsController@update')->name('update');
+    Route::get('/create', 'RatingsController@create')->name('create');
+    Route::post('/', 'RatingsController@store')->name('store');
+    Route::delete('/{rating}', 'RatingsController@delete')->name('delete');
+    });
+});
