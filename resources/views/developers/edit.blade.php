@@ -13,7 +13,6 @@
                         <label for="name">Name</label>
                         <input type="text" class="form-control" name="name" value="{{$developer['name']}}">
                     </div>
-                    <br>
                     <div class="form-group">
                         <label for="country">Country</label>
                         <input type="text" class="form-control" name="country" value="{{$developer['country']}}">
