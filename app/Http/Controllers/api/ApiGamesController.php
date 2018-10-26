@@ -20,7 +20,7 @@ class ApiGamesController extends Controller
     {
         $games = $this->gamesService->all(['developer', 'ratings']);
 
-        $this->jsonResponse($games);
+        $this::jsonResponse($games);
     }
 
     public function store(Request $request)
