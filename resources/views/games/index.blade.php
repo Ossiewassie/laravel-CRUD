@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-    <a href="{{ route('games.create') }}" class="btn btn-primary btn-sm active" style="margin-bottom: 5px;">Create new game</a>
+    <a href="{{ route('games.create') }}" class="btn btn-primary btn-sm active" style="margin-bottom: 5px;">Create new yeet</a>
 
     @if(count($games) > 0)
         <table class="table table-dark table-hover">
