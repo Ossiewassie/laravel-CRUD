@@ -16,12 +16,13 @@ class GamesService
         return Game::with($with)->find($id);
     }
 
-    public function update($id, $values) {
-        $game = $this->find($id);
+    public function update($id, $request) {
+        Game::find($id)->update($request);
+        return Game::find($id);
+    }
 
-        $game->update($values);
-
-        return $game;
+    public function store($values) {
+        return Game::create($values);
     }
 
     public function getPagination($id) {
@@ -34,5 +35,9 @@ class GamesService
         $gameNr = array_search($id , $gameCounter);
 
         return ['gameNr' => $gameNr, 'gameCounter' => $gameCounter];
+    }
+
+    public function delete($id){
+        return Game::destroy($id);
     }
 }

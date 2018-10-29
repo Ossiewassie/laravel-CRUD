@@ -16,12 +16,13 @@ class RatingsService
         return Rating::with($with)->find($id);
     }
 
-    public function update($id, $values) {
-        $rating = $this->find($id);
+    public function update($id, $request) {
+        Rating::find($id)->update($request);
+        return Rating::find($id);
+    }
 
-        $rating->update($values);
-
-        return $rating;
+    public function store($values) {
+        return Rating::create($values);
     }
 
     public function getPagination($id) {
@@ -34,5 +35,9 @@ class RatingsService
         $ratingNr = array_search($id , $ratingCounter);
 
         return ['ratingNr' => $ratingNr, 'ratingCounter' => $ratingCounter];
+    }
+
+    public function delete($id){
+        return Rating::destroy($id);
     }
 }

@@ -16,12 +16,13 @@ class DevelopersService
         return Developer::with($with)->find($id);
     }
 
-    public function update($id, $values) {
-        $developer = $this->find($id);
+    public function update($id, $request) {
+        Developer::find($id)->update($request);
+        return Developer::find($id);
+    }
 
-        $developer->update($values);
-
-        return $developer;
+    public function store($values) {
+        return Developer::create($values);
     }
 
     public function getPagination($id) {
@@ -34,5 +35,9 @@ class DevelopersService
         $developerNr = array_search($id , $developerCounter);
 
         return ['developerNr' => $developerNr, 'developerCounter' => $developerCounter];
+    }
+    
+    public function delete($id){
+        return Developer::destroy($id);
     }
 }

@@ -64,7 +64,7 @@ class GamesController extends Controller
 
     public function delete($id)
     {
-        Game::destroy($id);
+        $this->gamesService->delete($id);
 
         return redirect()->route('games.index')->with('success', 'Game Removed');
     }

@@ -31,13 +31,28 @@ Route::prefix('ratings')->name('ratings.')->group(function () {
 });
 
 Route::prefix('api/')->name('api.')->group(function () {
-    Route::prefix('games')->name('api.games')->group(function () {
+    Route::prefix('games')->name('games.')->group(function () {
 
-        Route::get('/', 'apiGamesController@index')->name('index');
-    Route::get('/{rating}/edit', 'RatingsController@edit')->name('edit');
-    Route::patch('/{rating}', 'RatingsController@update')->name('update');
-    Route::get('/create', 'RatingsController@create')->name('create');
-    Route::post('/', 'RatingsController@store')->name('store');
-    Route::delete('/{rating}', 'RatingsController@delete')->name('delete');
+        Route::get('/', 'ApiGamesController@index')->name('index');
+        Route::post('/', 'ApiGamesController@store')->name('store');
+        Route::get('/{game}', 'ApiGamesController@view')->name('index');
+        Route::patch('/{game}', 'ApiGamesController@update')->name('update');
+        Route::delete('/{game}', 'ApiGamesController@delete')->name('delete');
+    });
+    Route::prefix('developers')->name('developers.')->group(function () {
+
+        Route::get('/', 'ApiDevelopersController@index')->name('index');
+        Route::post('/', 'ApiDevelopersController@store')->name('store');
+        Route::get('/{game}', 'ApiDevelopersController@view')->name('index');
+        Route::patch('/{game}', 'ApiDevelopersController@update')->name('update');
+        Route::delete('/{game}', 'ApiDevelopersController@delete')->name('delete');
+    });
+    Route::prefix('ratings')->name('ratings.')->group(function () {
+
+        Route::get('/', 'ApiRatingsController@index')->name('index');
+        Route::post('/', 'ApiRatingsController@store')->name('store');
+        Route::get('/{game}', 'ApiRatingsController@view')->name('index');
+        Route::patch('/{game}', 'ApiRatingsController@update')->name('update');
+        Route::delete('/{game}', 'ApiRatingsController@delete')->name('delete');
     });
 });
