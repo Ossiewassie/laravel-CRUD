@@ -2,7 +2,7 @@
 <html>
     <head>
         <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{ URL::asset('css/blog.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
         <title>Games Website</title>
     </head>
     <body>

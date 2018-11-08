@@ -56,3 +56,6 @@ Route::prefix('api/')->name('api.')->group(function () {
         Route::delete('/{game}', 'ApiRatingsController@delete')->name('delete');
     });
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
