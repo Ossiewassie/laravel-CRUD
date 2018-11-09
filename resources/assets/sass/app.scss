@@ -1,3 +1,12 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
 .blog-header {
     line-height: 1;
     border-bottom: 1px solid #e5e5e5;

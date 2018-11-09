@@ -61,7 +61,7 @@
                         @endforeach
                     </ul>
                 @else
-                    Geen ratings
+                    No ratings
                 @endif
 
             </div>
