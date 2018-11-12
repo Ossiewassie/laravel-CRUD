@@ -25,11 +25,13 @@ class RatingsController extends Controller
 
     public function edit($id)
     {
-        $rating = $this->ratingService->find($id);
+        $rating = $this->ratingService->find($id, ['game']);
 
         $pagination = $this->ratingService->getPagination($id);
 
-        return view('ratings.edit', compact('rating', 'pagination'));
+        $games = Game::all();
+
+        return view('ratings.edit', compact('rating', 'pagination', 'games'));
     }
 
     public function update(Request $request, $id)
@@ -45,7 +47,9 @@ class RatingsController extends Controller
     }
     public function create()
     {
-        return view('ratings.create');
+        $games = Game::all();
+
+        return view('ratings.create' , compact('games'));
     }
 
     public function store(Request $request)

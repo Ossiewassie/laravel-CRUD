@@ -15,6 +15,8 @@
         <nav class="nav d-flex justify-content-center">
             <a class="p-2 text-muted" href="{{route('games.index')}}">Games</a>
             <a class="p-2 text-muted" href="{{route('developers.index')}}">Developers</a>
+            <a class="p-2 text-muted" href="{{route('ratings.index')}}">Ratings</a>
+
         </nav>
     </div>
 
