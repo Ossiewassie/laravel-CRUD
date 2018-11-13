@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.master')
 
 @section ('content')
     @if(count($ratings) > 0)

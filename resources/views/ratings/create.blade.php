@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.master')
 
 @section ('content')
     <h3>Create New Rating</h3>

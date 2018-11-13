@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.master')
 
 @section ('content')
     <a href="{{ route('developers.create') }}" class="btn btn-primary btn-sm active" style="margin-bottom: 5px;">Create new developer</a>

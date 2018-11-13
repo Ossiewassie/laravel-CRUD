@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.master')
 @section ('content')
     <div class="row">
         @if(count($game) > 0)

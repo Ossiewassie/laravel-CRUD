@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.master')
 @section ('content')
     <h3>Read/Update Rating</h3>
     @if(count($rating) > 0)

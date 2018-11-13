@@ -3,6 +3,8 @@ Route::get('/', function() {
     return redirect(route('games.index'));
 })->name('index');
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::prefix('games')->name('games.')->group(function () {
     Route::get('/', 'GamesController@index')->name('index');
     Route::get('/{game}/edit', 'GamesController@edit')->name('edit');
@@ -56,6 +58,9 @@ Route::prefix('api/')->name('api.')->group(function () {
         Route::delete('/{game}', 'ApiRatingsController@delete')->name('delete');
     });
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register', 'RegistrationController@create');
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/login', 'SessionsController@create');
+
