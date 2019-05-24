@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 @section ('content')
     <h3>Read/Update Rating</h3>
-    @if(count($rating) > 0)
+    @if(!empty($rating))
         <form method="POST" action="{{ route('ratings.update', $rating->id) }}">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}

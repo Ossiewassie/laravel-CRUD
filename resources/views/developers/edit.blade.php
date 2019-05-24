@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 @section ('content')
 
-    @if(count($developer) > 0)
+    @if(!empty($developer))
         <div class="row">
             <div class="col-6">
                 <h2>Developer: {{ $developer->name }}</h2>

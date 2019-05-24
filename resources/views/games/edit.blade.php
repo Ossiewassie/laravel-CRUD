@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 @section ('content')
     <div class="row">
-        @if(count($game) > 0)
+      @if( !empty( $game ) )
             <div class="col-6">
                 <h3>Read/Update Game</h3>
                 <form method="POST" action="{{ route('games.update', $game->id) }}">
