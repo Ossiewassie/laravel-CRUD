@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <label for="rating">Rating</label>
-                        <input type="number" class="form-control" name="rating" disabled value="{{$game['rating']}}">
+                        <input type="number" class="form-control" name="rating" disabled value="@if ($game->averageRating){{ round($game->averageRating, 1) }}@else - @endif">
                     </div>
                     <div class="form-group">
                         <label for="online">Online</label>

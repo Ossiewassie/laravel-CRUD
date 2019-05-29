@@ -4,7 +4,7 @@ namespace App;
 
 class Rating extends Model
 {
-    protected $fillable = ['rating', 'game_id'];
+    protected $fillable = ['rating', 'game_id', 'description'];
 
     public function game()
     {
@@ -16,4 +16,3 @@ class Rating extends Model
         return $this->belongsTo(User::class);
     }
 }
-

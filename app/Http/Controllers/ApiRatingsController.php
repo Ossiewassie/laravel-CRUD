@@ -24,12 +24,12 @@ class ApiRatingsController extends Controller
 
     public function store(Request $request)
     {
-        return $this->RatingsService->store($request->only('rating', 'game_id'));
+        return $this->RatingsService->store($request->only('rating', 'game_id', 'description'));
     }
 
     public function update(Request $request, $id)
     {
-        return $this->RatingsService->update($id, $request->only('rating', 'game_id'));
+        return $this->RatingsService->update($id, $request->only('rating', 'game_id', 'description'));
     }
 
     public function delete($id)

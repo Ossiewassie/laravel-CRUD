@@ -41,7 +41,7 @@ class RatingsController extends Controller
             'game_id' => 'required'
         ]);
 
-        $this->ratingService->update($id, $request->only('rating', 'game_id'));
+        $this->ratingService->update($id, $request->only('rating', 'game_id', 'description'));
 
         return redirect()->route('ratings.edit', $id)->with('success', 'Rating Updated');
     }
@@ -59,7 +59,7 @@ class RatingsController extends Controller
             'game_id' => 'required'
         ]);
 
-        Rating::create($request->only('rating', 'game_id'));
+        Rating::create($request->only('rating', 'game_id', 'description'));
 
         return redirect()->route('ratings.index')->with('success', 'Rating Added');
 
